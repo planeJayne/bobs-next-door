@@ -1,15 +1,18 @@
-import React from "react"
+import React from "react";
 import Store from "./Store"
 
-function StoreList() {
+function StoreList({stores}) {
 
+    const storeComp= stores.map(store => <Store key={store.id} store={store} />)
 
+    // const {name, image, episode, season}= store
+    // console.log(stores)
     return(
         <table>
             <tbody>
                 <tr>
                     <th className="row-name">
-                        Name
+                        NAME
                     </th>
                     <th>
                         Image
@@ -21,7 +24,7 @@ function StoreList() {
                         Episode
                     </th>
                 </tr>
-                {/** Render a list of <Store> components here. */}
+                {storeComp}
             </tbody>
         
         </table>
